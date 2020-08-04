@@ -2,9 +2,6 @@
   *29/07/2020
   *Programa para testar o robo junto a um magnetometro
   */
-
-  
-
   #include <Coordinates.h> //Biblioteca que converte valores de retangular para polar
   #include "MPU9250.h" //Biblioteca do sensor Magnetometro / Giroscopio / Acelerometro
   #include <EEPROM.h> // Biblioteca da EEPROM do arduino, usada para armazanar os valores da parametrização

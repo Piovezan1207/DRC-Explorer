@@ -9,10 +9,11 @@ void Calibra()
                 IMU.readSensor();
                 X = (IMU.getMagX_uT()*100);
                 Y = (IMU.getMagY_uT()*100);
-            
+            //800
+                  // 1400 < 800
                   if(Xmax < X)
                 {
-                      Xmax = X;
+                      Xmax = X; // 1400
                 }
                 if(Ymax < Y)
                 {
@@ -21,7 +22,7 @@ void Calibra()
               
                 if(Xmin > X)
                 {
-                      Xmin = X;
+                      Xmin = X; 
                 }
                 if(Ymin > Y)
                 {
@@ -101,12 +102,12 @@ long Medir() //Faz um mapeamento dos valorez máximos e minimos para manter a pr
 void Calcular() //Calcula o angulo com base nos valores dos eixos X e Y, fazendo uma conversão de retangular para polar
 {
    Angulo.fromCartesian(Ymed,Xmed);
-   ang =  Angulo.getAngle();
+   ang =  Angulo.getAngle(); //entr 0 e 6,28 -  628
    ang *= 100;
    ang2 = ang+Defasagem;
    ang += Defasagem;
-   if(ang > 628) ang -= 628;
-   if(ang < 0) ang += 628;
+   if(ang > 628) ang -= 628; 
+   if(ang < 0) ang += 628; 
    if(ang <= 314) {ang = map(ang, 0, 314, 0, 180); dir = '+'; }//Mapeamento do valor resultando do calculo, para o angulo de 0 a 360
    if(ang > 314){ang = map(ang, 315, 628, 180, 0); dir = '-';} //Mapeamento do valor resultando do calculo, para o angulo de 0 a 360
   

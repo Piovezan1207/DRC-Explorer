@@ -1,26 +1,6 @@
 void Logica()
 {
  
- 
- /* Serial1.print("F: ");Serial1.print(LeituraF());Serial1.print(" D:  ");
-  Serial1.print(LeituraDir());Serial1.print(" E:  ");
-  Serial1.print(LeituraEsq());Serial1.print("  Ang:  ");
-  Medir();
-  Serial1.print(dir);Serial1.print(" ");
-  Serial1.println(Filtro_Mag(ang));*/
-  /*
-  //delay(800);
-  Frente();
-  delay(1000);
-  Tras();
-  delay(1000);
-  Esquerda('F');
-  delay(1000);
-  Direita('F');
-  delay(1000);
-  Para();
-  delay(1000);*/
-
   if(LeituraF() < 4 )
   {
     Para();
@@ -58,7 +38,7 @@ void Virar_D()
           {
                    AnguloObjetivo = AnguloD + 90; 
                    Serial1.print("Angulo: "); Serial1.println(dir); Serial1.print(AnguloD); Serial1.print("  Angulo final: "); Serial1.print("+"); Serial1.println(AnguloObjetivo);
-                   delay(500);             
+                  // delay(500);             
                    Direita('F');
                    delay(1900);
                    Para();
@@ -77,13 +57,13 @@ void Virar_D()
                          Serial1.print(dir);Serial1.print(" ");
                          Serial1.println(Medir());                  
                    }
-                   Serial1.println("a");
+                   
            }
            else if(AnguloD > 90)
            {
                    AnguloObjetivo = AnguloD - 90;
                    AnguloObjetivo = 180 - AnguloObjetivo;
-                    Serial1.print("Angulo: "); Serial1.println(dir); Serial1.print(AnguloD); Serial1.print("  Angulo final: "); Serial1.print("-"); Serial1.println(AnguloObjetivo);
+                    Serial1.print("Angulo: "); Serial1.print(dir); Serial1.print(AnguloD); Serial1.print("  Angulo final: "); Serial1.print("-"); Serial1.println(AnguloObjetivo);
                     Direita('F');
                    delay(1900);
                    Para();
